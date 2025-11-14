@@ -1,6 +1,16 @@
 # INST-326-Project
 Repository for 326 semester long project
 
+Group Members and roles:
+Riley Coleman - Team Coordination & communication with project mentor & testing
+Fabricio - Software development & feature development
+Brian Caceres - Software development & feature development
+Kevin Kim - Testing & documentation
+
+
+
+
+
 Task management app:
 
 App to track all the tasks you have to do
