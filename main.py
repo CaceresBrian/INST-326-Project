@@ -2,8 +2,8 @@
 # This file will house the menu display and interaction methods
 
 from task_manager import TaskManager
-from task_list import TaskList
-from task import Task
+from taskListClass import TaskList
+from taskClass import Task
 
 
 def ask_list_name():
