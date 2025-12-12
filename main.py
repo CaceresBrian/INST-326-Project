@@ -57,7 +57,7 @@ def main():
     The menu will appear at the end of every interaction 
     """
     
-    manager = task_manager()
+    manager = TaskManager()
     
     while True:
         print("\n***** TORTUGA TASK MANAGER MENU *****\n")
@@ -76,7 +76,7 @@ def main():
         
         if choice == "1":
             name = ask_list_name()
-            task_list = taskList(name)
+            task_list = TaskList(name)
             
             
             
@@ -86,7 +86,7 @@ def main():
                 print("There are no task list yet.\n")
             else:
                 print("Task List:\n")
-                for task_list in lists:
+                for task_list in list:
                     print("*{} ({} task, {} completed)".format(task_list.name(), task_list.count_tasks(), task_list.count_completed()))
                     
         elif choice == "3":
@@ -161,7 +161,7 @@ def main():
 
         elif choice == "6":
             keyword = input("Please enter a keyword: ").strip()
-            mathes = manager.find_task_global(keyword)
+            matches = manager.find_task_global(keyword)
             
             if not matches:
                 print("There are no task matching that keyword.")
