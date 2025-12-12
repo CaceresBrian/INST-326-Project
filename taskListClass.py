@@ -1,6 +1,6 @@
 # task_list.py
 
-from task import Task
+from taskClass import Task
 
 class TaskList:
     """
