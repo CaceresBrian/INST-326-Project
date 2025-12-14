@@ -1,8 +1,8 @@
 # This is the task_manager class 
 # This will include methods to initialize task list objects
 
-from task_list import TaskList
-from task import Task
+from taskListClass import TaskList
+from taskClass import Task
 
 class TaskManager:
     """
