@@ -51,7 +51,7 @@ The repository is organized into multiple Python files, each responsible for a s
 
 ---
 
-## How to Run the Program
+## How to use our rrogram
   When the program runs, the user interacts with the application through the command line
   The user is prompted to:
   1. Create new tasks
@@ -68,6 +68,8 @@ The repository is organized into multiple Python files, each responsible for a s
   4. Messages indicating when tasks are due or overdue
 This will make it easier for thge user to understand their task status and manage responibilites in the best possible manner
 
+## How to Run the Program
+
 ### Requirements
 - Python 3.x installed on your machine
 
@@ -78,7 +80,6 @@ This will make it easier for thge user to understand their task status and manag
 
 ```bash
 python main.py
-   
 
 
 
