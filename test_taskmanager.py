@@ -36,7 +36,7 @@ def test_save_and_load_file():
     school.add_task(
         Task(
             "Finish Homework",
-            due_date="December 1st",
+            due_date="2025-12-01",
             priority="high",
             notes="calculus"
         )
@@ -55,6 +55,6 @@ def test_save_and_load_file():
     tasks = loaded_list.list_tasks()
     assert len(tasks) == 1
     assert tasks[0].title == "Finish Homework"
-    assert tasks[0].due_date == "December 1st"
+    assert tasks[0].due_date == "2025-12-01"
     assert tasks[0].priority == "high"
     assert tasks[0].notes == "calculus"
