@@ -38,7 +38,7 @@ def ask_due_date():
     Will ask the user the due date
     """
         
-    due_date = input("What is the due date? Example: 2025-9-04").strip
+    due_date = input("What is the due date? Example: 2025-9-04").strip()
     
     return due_date
 
@@ -70,24 +70,25 @@ def main():
         print("6) Search task by keyword")
         print("7) Save all to a text file")
         print("8) Load task from a text file")
-        print("9) Quit Tortuge Task Manager")
+        print("9) Quit Tortuga Task Manager")
 
         choice = input("Option: ").strip()
         
         if choice == "1":
             name = ask_list_name()
             task_list = TaskList(name)
+            manager.add_list(task_list)
             
             
             
         elif choice == "2":
-            list = manager.list_all_list()
+            list = manager.list_all_lists()
             if not list:
                 print("There are no task list yet.\n")
             else:
                 print("Task List:\n")
                 for task_list in list:
-                    print("*{} ({} task, {} completed)".format(task_list.name(), task_list.count_tasks(), task_list.count_completed()))
+                    print("*{} ({} task, {} completed)".format(task_list.list_tasks(), task_list.count_tasks(), task_list.count_completed()))
                     
         elif choice == "3":
             name = ask_list_name()
@@ -109,7 +110,7 @@ def main():
 
 
         elif choice == "4":
-            name = ask_list_name
+            name = ask_list_name()
             task_list = manager.get_list(name)
             
             if task_list is None:
@@ -118,10 +119,10 @@ def main():
             
             tasks = task_list.list_task()
             
-            if not task:
+            if not tasks:
                 print("There are no task in that list")
             else:
-                print("Task in list '{}': ".format(task_list.name))
+                print("Task in list '{}': ".format(task_list.list_tasks()))
                 for task in tasks:
                     status = "Completed" if task.is_completed() else "Pending"
                     print("\n- {} [{}] (Due: {}, Priority: {})".format(task.title,
@@ -131,8 +132,8 @@ def main():
             
 
         elif choice == "5":
-            name = ask_list_name
-            task_last = manager.get_list(name)
+            name = ask_list_name()
+            task_list = manager.get_list(name)
             
             if task_list is None:
                 print("There is no list with that name, please try again.")
@@ -161,7 +162,7 @@ def main():
 
         elif choice == "6":
             keyword = input("Please enter a keyword: ").strip()
-            matches = manager.find_task_global(keyword)
+            matches = manager.find_tasks_global(keyword)
             
             if not matches:
                 print("There are no task matching that keyword.")
@@ -183,7 +184,7 @@ def main():
 
 
         elif choice == "8":
-            path = input("Enter the file path to load: ".strip())
+            path = input("Enter the file path to load: ").strip()
             manager.load_from_file(path)
             
             print("File succesfully loaded.")
@@ -193,5 +194,5 @@ def main():
             break
 
 
-if __name__ == "__name__":
+if __name__ == "__main__":
     main()

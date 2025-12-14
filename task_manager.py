@@ -32,13 +32,13 @@ class TaskManager:
         """
         Removes the called list from the task list 
         """
-        del self.list[name]
+        del self.lists[name]
     
     def get_list(self, name):
         """
         Returns the task list that was called
         """
-        return self.list.get(name)
+        return self.lists.get(name)
     
     def list_all_lists(self):
         """
@@ -79,8 +79,48 @@ class TaskManager:
             f.close()
             
     def load_from_file(self, filepath):
-        pass        
+        """
+        Load task list and tasks from a text file
+        """    
         
+        self.lists = {}
+        current_list = None
         
+        f = open(filepath, "r")
+
+        for raw_line in f:
+            line = raw_line.strip()
+            if not line:
+                continue
+
+            parts = line.split("|")
+            record_type = parts[0]
+
+            if record_type == "LIST":
+                list_name = parts[1]
+                current_list = TaskList(list_name)
+                self.add_list(current_list)
+
+            elif record_type == "TASK":
+                title = parts[1]
+                due_date = parts[2]
+                priority = parts[3]
+                completed_flag = parts[4]
+                notes = parts[5]
+
+                completed = True if completed_flag == "1" else False 
+
+                task = Task(
+                    title = title,
+                    dude_date = due_date, 
+                    priority = priority, 
+                    notes = notes,
+                    completed = completed
+                )
+                current_list.add_task(task)
+
+            f.close()
+
+
         
     
