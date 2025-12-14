@@ -20,7 +20,7 @@ class TaskList:
         """
         Return a developer-friendly string representation of the TaskList.
         """
-        return "TaskList(name={!r}, tasks={})".format(self.name, len(self.tasks))
+        return f"TaskList(name={self.name!r}, tasks={len(self.tasks)})"
 
     def add_task(self, task):
         """
