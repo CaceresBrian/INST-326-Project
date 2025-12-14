@@ -18,7 +18,7 @@ def ask_task_name():
     """
     Will ask the user to input a name for the task they are about to input
     """
-    task_name = input("Enter the name of your task").strip()
+    task_name = input("Enter the name of your task: ").strip()
 
     return task_name
 
@@ -27,7 +27,7 @@ def ask_priority_of_task():
     Will ask the user to input the priority of the task (High, Medium, Low)
     """
     
-    priority = input("What is the priority for this task? High, Medium, or Low (if left blank, the defualt will be medium)").strip().lower()
+    priority = input("What is the priority for this task? High, Medium, or Low (if left blank, the defualt will be medium): ").strip().lower()
     if not priority:
         priority = "medium"
         
@@ -38,7 +38,7 @@ def ask_due_date():
     Will ask the user the due date
     """
         
-    due_date = input("What is the due date? Example: 2025-9-04").strip()
+    due_date = input("What is the due date? (Example: 2025-9-04): ").strip()
     
     return due_date
 
@@ -47,7 +47,7 @@ def ask_notes():
     Will ask the user to input notes for the task 
     """
     
-    notes = input("What are the notes for this task?").strip()
+    notes = input("What are the notes for this task? ").strip()
     
     return notes
     
@@ -117,7 +117,7 @@ def main():
                 print("There is not a task list with that name. Please try again \n")
                 continue
             
-            tasks = task_list.list_task()
+            tasks = task_list.list_tasks()
             
             if not tasks:
                 print("There are no task in that list")
@@ -139,7 +139,7 @@ def main():
                 print("There is no list with that name, please try again.")
                 continue
             
-            name = ask_task_name
+            name = ask_task_name()
             task = task_list.get_task(name)
             
             if task is None:

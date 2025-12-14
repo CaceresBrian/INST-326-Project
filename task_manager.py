@@ -111,16 +111,19 @@ class TaskManager:
                 completed = True if completed_flag == "1" else False 
 
                 task = Task(
-                    title = title,
-                    dude_date = due_date, 
-                    priority = priority, 
-                    notes = notes,
-                    completed = completed
+                    title=title,
+                    due_date=due_date,  
+                    priority=priority, 
+                    notes=notes,
+                    completed=completed
                 )
                 current_list.add_task(task)
 
-            f.close()
+        f.close()
 
 
+
+
+
+            
         
-    
