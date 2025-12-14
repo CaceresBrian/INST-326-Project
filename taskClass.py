@@ -5,13 +5,15 @@ class Task:
 
     def __init__(self, title, due_date="", priority="medium", notes="", completed=False): #modified this
         """
-        Initialize a Task.
+        Set up a Task.
 
-        :param title: Short title of the task.
-        :param due_date: Optional due date as a string (e.g., '2025-12-10').
-        :param priority: 'low', 'medium', or 'high'.
-        :param notes: Additional notes for the task.
-        :param completed: Boolean indicating if the task is completed.
+        Arguments:
+        title: The descriptive name of the task.
+        due_date: The date this task is scheduled to be completed.
+        priority: The importance level (must be one of the predefined strings).
+        notes: Any additional comments.
+        completed: A simple True/False status marker.
+
         """
         
         if not title:
