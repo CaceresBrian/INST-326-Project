@@ -148,7 +148,7 @@ def main():
             
             print("Current list status:", "completed" if task.is_completed() else "incomplete/pending")
             
-            new_status = input("Is this task (c)ompleted or (i)ncomplete").strip().lower()
+            new_status = input("Is this task (c)ompleted or (i)ncomplete: ").strip().lower()
             
             if new_status == "c":
                 task.mark_completed()
