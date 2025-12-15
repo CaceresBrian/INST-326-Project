@@ -88,7 +88,7 @@ def main():
             else:
                 print("Task List:\n")
                 for task_list in list:
-                    print("*{} ({} task, {} completed)".format(task_list.list_tasks(), task_list.count_tasks(), task_list.count_completed()))
+                    print("*{} ({} task, {} completed)".format(task_list.name, task_list.count_tasks(), task_list.count_completed()))
                     
         elif choice == "3":
             name = ask_list_name()
